@@ -57,7 +57,7 @@ namespace API.Controllers
             //     ProductType = product.ProductType.Name
             // }).ToList();
             var data = _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products); 
-            return Ok(new Pagination<ProductToReturnDto>(productParams.PageSize, 
+            return Ok(new Pagination<ProductToReturnDto>(productParams.PageIndex, 
                 productParams.PageSize, totalItems, data));
         }
 
